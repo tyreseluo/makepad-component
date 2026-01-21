@@ -43,6 +43,15 @@ live_design! {
     pub MUTED = #f1f5f9
     pub MUTED_FOREGROUND = #64748b
 
+    // Card colors
+    pub CARD = #ffffff
+    pub CARD_FOREGROUND = #0f172a
+
+    // Accent colors (using purple/violet)
+    pub ACCENT = #8b5cf6
+    pub ACCENT_HOVER = #7c3aed
+    pub ACCENT_FOREGROUND = #ffffff
+
     // Transparent
     pub TRANSPARENT = #0000
 }
