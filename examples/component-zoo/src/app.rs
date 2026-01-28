@@ -20,33 +20,33 @@ live_design! {
     use link::shaders::*;
     use link::widgets::*;
 
-    use makepad_component::accordion::*;
-    use makepad_component::alert::*;
-    use makepad_component::avatar::*;
-    use makepad_component::badge::*;
-    use makepad_component::button::*;
-    use makepad_component::card::*;
-    use makepad_component::checkbox::*;
-    use makepad_component::divider::*;
-    use makepad_component::dropdown::*;
-    use makepad_component::input::*;
-    use makepad_component::label::*;
-    use makepad_component::layout::*;
-    use makepad_component::list::*;
-    use makepad_component::modal::*;
-    use makepad_component::notification::*;
-    use makepad_component::page_flip::*;
-    use makepad_component::popover::*;
-    use makepad_component::progress::*;
-    use makepad_component::radio::*;
-    use makepad_component::skeleton::*;
-    use makepad_component::slider::*;
-    use makepad_component::spinner::*;
-    use makepad_component::switch::*;
-    use makepad_component::tab::*;
-    use makepad_component::text::*;
-    use makepad_component::theme::colors::*;
-    use makepad_component::tooltip::*;
+    use makepad_components::accordion::*;
+    use makepad_components::alert::*;
+    use makepad_components::avatar::*;
+    use makepad_components::badge::*;
+    use makepad_components::button::*;
+    use makepad_components::card::*;
+    use makepad_components::checkbox::*;
+    use makepad_components::divider::*;
+    use makepad_components::dropdown::*;
+    use makepad_components::input::*;
+    use makepad_components::label::*;
+    use makepad_components::layout::*;
+    use makepad_components::list::*;
+    use makepad_components::modal::*;
+    use makepad_components::notification::*;
+    use makepad_components::page_flip::*;
+    use makepad_components::popover::*;
+    use makepad_components::progress::*;
+    use makepad_components::radio::*;
+    use makepad_components::skeleton::*;
+    use makepad_components::slider::*;
+    use makepad_components::spinner::*;
+    use makepad_components::switch::*;
+    use makepad_components::tab::*;
+    use makepad_components::text::*;
+    use makepad_components::theme::colors::*;
+    use makepad_components::tooltip::*;
 
     // ============================================================
     // Section Header Component
@@ -3322,7 +3322,7 @@ pub struct App {
 impl LiveRegister for App {
     fn live_register(cx: &mut Cx) {
         crate::makepad_widgets::live_design(cx);
-        makepad_component::live_design(cx);
+        makepad_components::live_design(cx);
     }
 }
 
