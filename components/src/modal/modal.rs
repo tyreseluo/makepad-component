@@ -6,7 +6,7 @@ live_design! {
     use link::widgets::*;
 
     use crate::theme::colors::*;
-    use crate::widgets::button::*;
+    use crate::button::*;
 
     // ============================================================
     // MpModal - Modal/Dialog component

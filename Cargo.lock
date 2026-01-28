@@ -5,7 +5,7 @@ version = 4
 [[package]]
 name = "ab_glyph_rasterizer"
 version = "0.1.8"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "adler2"
@@ -72,9 +72,9 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "cc"
-version = "1.2.53"
+version = "1.2.54"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "755d2fce177175ffca841e9a06afdb2c4ab0f593d53b4dee48147dfaade85932"
+checksum = "6354c81bbfd62d9cfa9cb3c773c2b7b2a3a482d569de977fd0e961f6e7c00583"
 dependencies = [
  "find-msvc-tools",
  "shlex",
@@ -90,7 +90,7 @@ checksum = "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801"
 name = "component-zoo"
 version = "0.1.0"
 dependencies = [
- "makepad-component",
+ "makepad-components",
  "makepad-widgets",
 ]
 
@@ -263,7 +263,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "makepad-component"
+name = "makepad-components"
 version = "0.1.0"
 dependencies = [
  "makepad-widgets",
@@ -272,7 +272,7 @@ dependencies = [
 [[package]]
 name = "makepad-derive-live"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-id",
  "makepad-micro-proc-macro",
@@ -281,7 +281,7 @@ dependencies = [
 [[package]]
 name = "makepad-derive-wasm-bridge"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-micro-proc-macro",
 ]
@@ -289,7 +289,7 @@ dependencies = [
 [[package]]
 name = "makepad-derive-widget"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-id",
  "makepad-micro-proc-macro",
@@ -298,7 +298,7 @@ dependencies = [
 [[package]]
 name = "makepad-draw"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "ab_glyph_rasterizer",
  "fxhash",
@@ -318,7 +318,7 @@ dependencies = [
 [[package]]
 name = "makepad-error-log"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-micro-serde",
 ]
@@ -326,7 +326,7 @@ dependencies = [
 [[package]]
 name = "makepad-fonts-chinese-bold"
 version = "1.0.1"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-platform",
 ]
@@ -334,7 +334,7 @@ dependencies = [
 [[package]]
 name = "makepad-fonts-chinese-bold-2"
 version = "1.0.1"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-platform",
 ]
@@ -342,7 +342,7 @@ dependencies = [
 [[package]]
 name = "makepad-fonts-chinese-regular"
 version = "1.0.1"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-platform",
 ]
@@ -350,7 +350,7 @@ dependencies = [
 [[package]]
 name = "makepad-fonts-chinese-regular-2"
 version = "1.0.1"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-platform",
 ]
@@ -358,7 +358,7 @@ dependencies = [
 [[package]]
 name = "makepad-fonts-emoji"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-platform",
 ]
@@ -366,17 +366,17 @@ dependencies = [
 [[package]]
 name = "makepad-futures"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "makepad-futures-legacy"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "makepad-html"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-id",
 ]
@@ -384,7 +384,7 @@ dependencies = [
 [[package]]
 name = "makepad-http"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-script",
 ]
@@ -398,7 +398,7 @@ checksum = "9775cbec5fa0647500c3e5de7c850280a88335d1d2d770e5aa2332b801ba7064"
 [[package]]
 name = "makepad-live-compiler"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-derive-live",
  "makepad-live-tokenizer",
@@ -408,7 +408,7 @@ dependencies = [
 [[package]]
 name = "makepad-live-id"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-id-macros",
 ]
@@ -416,7 +416,7 @@ dependencies = [
 [[package]]
 name = "makepad-live-id-macros"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-micro-proc-macro",
 ]
@@ -424,7 +424,7 @@ dependencies = [
 [[package]]
 name = "makepad-live-tokenizer"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-id",
  "makepad-math",
@@ -434,7 +434,7 @@ dependencies = [
 [[package]]
 name = "makepad-math"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-micro-serde",
 ]
@@ -442,12 +442,12 @@ dependencies = [
 [[package]]
 name = "makepad-micro-proc-macro"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "makepad-micro-serde"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-id",
  "makepad-micro-serde-derive",
@@ -456,7 +456,7 @@ dependencies = [
 [[package]]
 name = "makepad-micro-serde-derive"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-micro-proc-macro",
 ]
@@ -464,12 +464,12 @@ dependencies = [
 [[package]]
 name = "makepad-objc-sys"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "makepad-platform"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "bitflags 2.10.0",
  "hilog-sys",
@@ -497,7 +497,7 @@ dependencies = [
 [[package]]
 name = "makepad-rustybuzz"
 version = "0.8.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "bitflags 1.3.2",
  "bytemuck",
@@ -512,7 +512,7 @@ dependencies = [
 [[package]]
 name = "makepad-script"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-error-log",
  "makepad-live-id",
@@ -524,7 +524,7 @@ dependencies = [
 [[package]]
 name = "makepad-script-derive"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-micro-proc-macro",
 ]
@@ -532,7 +532,7 @@ dependencies = [
 [[package]]
 name = "makepad-shader-compiler"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-live-compiler",
 ]
@@ -540,12 +540,12 @@ dependencies = [
 [[package]]
 name = "makepad-ttf-parser"
 version = "0.21.1"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "makepad-vector"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-ttf-parser",
  "resvg",
@@ -554,7 +554,7 @@ dependencies = [
 [[package]]
 name = "makepad-wasm-bridge"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-derive-wasm-bridge",
  "makepad-live-id",
@@ -563,7 +563,7 @@ dependencies = [
 [[package]]
 name = "makepad-widgets"
 version = "1.0.0"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-derive-widget",
  "makepad-draw",
@@ -582,7 +582,7 @@ dependencies = [
 [[package]]
 name = "makepad-zune-core"
 version = "0.2.14"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "bitflags 2.10.0",
 ]
@@ -590,7 +590,7 @@ dependencies = [
 [[package]]
 name = "makepad-zune-jpeg"
 version = "0.3.17"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "makepad-zune-core",
 ]
@@ -598,7 +598,7 @@ dependencies = [
 [[package]]
 name = "makepad-zune-png"
 version = "0.4.10"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 dependencies = [
  "zune-core",
  "zune-inflate",
@@ -840,7 +840,7 @@ checksum = "e1cf6437eb19a8f4a6cc0f7dca544973b0b78843adbfeb3683d1a94a0024a294"
 [[package]]
 name = "sdfer"
 version = "0.2.1"
-source = "git+https://github.com/makepad/makepad?branch=dev#20b8635520f77e3b730d572a5a39215f86bc146b"
+source = "git+https://github.com/Project-Robius-China/makepad?branch=makepad_component_used_makepad_version#89592532e5a1843105cf70bb66de934692bb1c77"
 
 [[package]]
 name = "shlex"

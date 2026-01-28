@@ -1,9 +1,9 @@
 [workspace]
 members = [
-    "crates/ui",
-    "crates/component-zoo",
+    "examples/*",
+    "components",
 ]
-resolver = "2"
+resolver = "3"
 
 [workspace.package]
 version = "0.1.0"
@@ -12,5 +12,5 @@ license = "MIT OR Apache-2.0"
 publish = false
 
 [workspace.dependencies]
-makepad-component = { path = "crates/ui" }
-makepad-widgets = { git = "https://github.com/makepad/makepad", branch = "dev" }
+makepad-components = { path = "components" }
+makepad-widgets    = { git = "https://github.com/Project-Robius-China/makepad", branch = "makepad_component_used_makepad_version" }

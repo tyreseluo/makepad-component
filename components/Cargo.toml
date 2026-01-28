@@ -1,0 +1,40 @@
+[package]
+name        = "makepad-components"
+description = "UI components for Makepad applications"
+edition     = { workspace = true }
+license     = { workspace = true }
+version     = { workspace = true }
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[dependencies]
+makepad-widgets = { workspace = true }
+
+[features]
+Accordion               = []
+Alert                   = []
+Avatar                  = []
+Badge                   = []
+Button                  = []
+Card                    = []
+Checkbox                = []
+Divider                 = []
+Dropdown                = []
+Input                   = []
+Label                   = []
+Layout                  = []
+List                    = []
+Modal                   = ["Button"]
+Notification            = []
+PageFlip                = []
+Popover                 = []
+Progress                = []
+Radio                   = []
+Skeleton                = []
+Slider                  = []
+Spinner                 = []
+Switch                  = []
+Tab                     = []
+Text                    = []
+Tooltip                 = []
