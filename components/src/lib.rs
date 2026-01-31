@@ -114,6 +114,10 @@ pub mod text;
 #[path ="./tooltip/tooltip.rs"]
 pub mod tooltip;
 
+#[cfg(feature = "Space")]
+#[path ="./space/space.rs"]
+pub mod space;
+
 use makepad_widgets::Cx;
 
 pub fn live_design(cx: &mut Cx) {
@@ -174,4 +178,6 @@ pub fn live_design(cx: &mut Cx) {
     text::live_design(cx);
     #[cfg(feature = "Tooltip")]
     tooltip::live_design(cx);
+    #[cfg(feature = "Space")]
+    space::live_design(cx);
 }

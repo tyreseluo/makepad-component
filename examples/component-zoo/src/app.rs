@@ -15,6 +15,7 @@ use makepad_components::skeleton::MpSkeletonWidgetWidgetRefExt;
 use makepad_components::slider::MpSliderWidgetRefExt;
 use makepad_components::switch::MpSwitchWidgetRefExt;
 use makepad_components::tab::MpTabWidgetRefExt;
+use makepad_components::theme::{apply_theme, ThemeMode};
 
 live_design! {
     use link::theme::*;
@@ -45,10 +46,11 @@ live_design! {
     use makepad_components::skeleton::*;
     use makepad_components::slider::*;
     use makepad_components::spinner::*;
+    use makepad_components::space::*;
     use makepad_components::switch::*;
     use makepad_components::tab::*;
     use makepad_components::text::*;
-    use makepad_components::theme::colors::*;
+    use link::theme_colors::*;
     use makepad_components::tooltip::*;
 
     // ============================================================
@@ -121,6 +123,18 @@ live_design! {
                             }
                             text: "A showcase of makepad-component widgets"
                         }
+
+                        <View> {
+                            width: Fill, height: Fit,
+                            flow: Right,
+                            align: { y: 0.5 }
+                            spacing: 8,
+
+                            <View> { width: Fill, height: Fit }
+                            <SubsectionLabel> { text: "Theme" }
+                            theme_toggle = <MpSwitch> { }
+                            theme_label = <SubsectionLabel> { text: "Light" }
+                        }
                     }
 
                     // Category Tab Bar
@@ -156,7 +170,7 @@ live_design! {
                             padding: { left: 24, right: 24, top: 24, bottom: 200 }
 
                             show_bg: true
-                            draw_bg: { color: #e2e8f0 }
+                            draw_bg: { color: (MUTED) }
 
                             // ===== Button Section =====
                             <View> {
@@ -1829,7 +1843,7 @@ live_design! {
                             padding: { left: 24, right: 24, top: 24, bottom: 100 }
 
                             show_bg: true
-                            draw_bg: { color: #fef3c7 }
+                            draw_bg: { color: (MUTED) }
 
                             <View> {
                                 width: Fill, height: Fit,
@@ -2199,6 +2213,66 @@ live_design! {
                                     }
                                 }
                             }
+
+                            <MpDivider> {}
+
+                            <View> {
+                                width: Fill, height: Fit,
+                                flow: Down,
+                                spacing: 16,
+
+                                <SectionHeader> { text: "Space" }
+
+                                <View> {
+                                    width: Fit, height: Fit,
+                                    flow: Down,
+                                    spacing: 8,
+
+                                    <SubsectionLabel> { text: "Horizontal (Small)" }
+
+                                    <MpSpace> {
+                                        <MpButtonSmall> { text: "One" }
+                                        <MpButtonSmall> { text: "Two" }
+                                        <MpButtonSmall> { text: "Three" }
+                                    }
+                                }
+
+                                <View> {
+                                    width: Fit, height: Fit,
+                                    flow: Down,
+                                    spacing: 8,
+
+                                    <SubsectionLabel> { text: "Vertical (Medium)" }
+
+                                    <MpSpaceVertical> {
+                                        size: Medium
+
+                                        <Label> { text: "Line A" }
+                                        <Label> { text: "Line B" }
+                                        <Label> { text: "Line C" }
+                                    }
+                                }
+
+                                <View> {
+                                    width: Fit, height: Fit,
+                                    flow: Down,
+                                    spacing: 8,
+
+                                    <SubsectionLabel> { text: "Wrap (Large)" }
+
+                                    <MpSpaceWrap> {
+                                        width: 260
+                                        size: Large
+
+                                        <MpBadgeStandalone> { label = { text: "Alpha" } }
+                                        <MpBadgeStandalone> { label = { text: "Beta" } }
+                                        <MpBadgeStandalone> { label = { text: "Gamma" } }
+                                        <MpBadgeStandalone> { label = { text: "Delta" } }
+                                        <MpBadgeStandalone> { label = { text: "Epsilon" } }
+                                        <MpBadgeStandalone> { label = { text: "Zeta" } }
+                                    }
+                                }
+                            }
                         }
 
                         // ============================================================
@@ -2211,7 +2285,7 @@ live_design! {
                             padding: { left: 24, right: 24, top: 24, bottom: 100 }
 
                             show_bg: true
-                            draw_bg: { color: #bfdbfe }
+                            draw_bg: { color: (MUTED) }
 
                             // ===== Tab Section =====
                             <View> {
@@ -2402,7 +2476,7 @@ live_design! {
                             padding: { left: 24, right: 24, top: 24, bottom: 100 }
 
                             show_bg: true
-                            draw_bg: { color: #fde68a }
+                            draw_bg: { color: (MUTED) }
 
                             // ===== Tooltip Section =====
                             <View> {
@@ -3147,7 +3221,7 @@ live_design! {
                             padding: { left: 24, right: 24, top: 24, bottom: 100 }
 
                             show_bg: true
-                            draw_bg: { color: #fbcfe8 }
+                            draw_bg: { color: (MUTED) }
 
                             // ===== List Section =====
                             <View> {
@@ -3436,7 +3510,7 @@ live_design! {
 
 app_main!(App);
 
-#[derive(Live, LiveHook)]
+#[derive(Live)]
 pub struct App {
     #[live]
     ui: WidgetRef,
@@ -3446,11 +3520,22 @@ pub struct App {
     current_page: usize,
     #[rust]
     current_category: usize,
+    #[rust]
+    is_dark: bool,
+}
+
+impl LiveHook for App {
+    fn after_apply(&mut self, cx: &mut Cx, _apply: &mut Apply, _index: usize, _nodes: &[LiveNode]) {
+        self.sync_theme_ui(cx);
+        self.sync_category_ui(cx);
+    }
 }
 
 impl LiveRegister for App {
     fn live_register(cx: &mut Cx) {
         crate::makepad_widgets::live_design(cx);
+        cx.link(live_id!(theme), live_id!(theme_desktop_light));
+        cx.link(live_id!(theme_colors), live_id!(theme_colors_light));
         makepad_components::live_design(cx);
     }
 }
@@ -3459,9 +3544,12 @@ impl MatchEvent for App {
     fn handle_startup(&mut self, cx: &mut Cx) {
         self.counter = 0;
         self.current_category = 0;
+        self.is_dark = false;
+
+        self.sync_theme_ui(cx);
 
         // Set initial category tab as selected
-        self.ui.mp_tab(ids!(cat_form)).set_selected(cx, true);
+        self.sync_category_ui(cx);
 
         // Initialize skeleton in loading state
         self.ui.mp_skeleton_widget(ids!(interactive_skeleton)).set_loading(cx, true);
@@ -3486,6 +3574,13 @@ impl MatchEvent for App {
         }
         if self.ui.mp_tab(ids!(cat_data)).clicked(&actions) {
             self.select_category(cx, 5);
+        }
+
+        if let Some(on) = self.ui.mp_switch(ids!(theme_toggle)).changed(&actions) {
+            self.is_dark = on;
+            let mode = if on { ThemeMode::Dark } else { ThemeMode::Light };
+            apply_theme(cx, mode);
+            self.sync_theme_ui(cx);
         }
 
         // Handle counter button
@@ -3763,6 +3858,17 @@ impl MatchEvent for App {
 }
 
 impl App {
+    fn sync_theme_ui(&mut self, cx: &mut Cx) {
+        self.ui.mp_switch(ids!(theme_toggle)).set_on(cx, self.is_dark);
+        self.ui
+            .label(ids!(theme_label))
+            .set_text(cx, if self.is_dark { "Dark" } else { "Light" });
+    }
+
+    fn sync_category_ui(&mut self, cx: &mut Cx) {
+        self.select_category(cx, self.current_category);
+    }
+
     fn select_category(&mut self, cx: &mut Cx, index: usize) {
         self.current_category = index;
 

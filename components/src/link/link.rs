@@ -5,7 +5,7 @@ live_design! {
     use link::shaders::*;
     use link::widgets::*;
 
-    use crate::theme::colors::*;
+    use link::theme_colors::*;
 
     pub MpLink = {{MpLink}} {
         width: Fit,
@@ -47,8 +47,6 @@ live_design! {
                 return sdf.stroke(line_color, 1.0);
             }
         }
-
-        cursor: Hand
 
         animator: {
             hover = {
