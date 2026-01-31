@@ -42,6 +42,10 @@ pub mod divider;
 #[path ="./dropdown/dropdown.rs"]
 pub mod dropdown;
 
+#[cfg(feature = "Drawer")]
+#[path ="./drawer/drawer.rs"]
+pub mod drawer;
+
 #[cfg(feature = "Input")]
 #[path ="./input/input.rs"]
 pub mod input;
@@ -114,6 +118,10 @@ pub mod text;
 #[path ="./tooltip/tooltip.rs"]
 pub mod tooltip;
 
+#[cfg(feature = "Space")]
+#[path ="./space/space.rs"]
+pub mod space;
+
 use makepad_widgets::Cx;
 
 pub fn live_design(cx: &mut Cx) {
@@ -138,6 +146,8 @@ pub fn live_design(cx: &mut Cx) {
     divider::live_design(cx);
     #[cfg(feature = "Dropdown")]
     dropdown::live_design(cx);
+    #[cfg(feature = "Drawer")]
+    drawer::live_design(cx);
     #[cfg(feature = "Input")]
     input::live_design(cx);
     #[cfg(feature = "Label")]
@@ -174,4 +184,6 @@ pub fn live_design(cx: &mut Cx) {
     text::live_design(cx);
     #[cfg(feature = "Tooltip")]
     tooltip::live_design(cx);
+    #[cfg(feature = "Space")]
+    space::live_design(cx);
 }
