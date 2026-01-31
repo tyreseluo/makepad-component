@@ -42,6 +42,10 @@ pub mod divider;
 #[path ="./dropdown/dropdown.rs"]
 pub mod dropdown;
 
+#[cfg(feature = "Drawer")]
+#[path ="./drawer/drawer.rs"]
+pub mod drawer;
+
 #[cfg(feature = "Input")]
 #[path ="./input/input.rs"]
 pub mod input;
@@ -142,6 +146,8 @@ pub fn live_design(cx: &mut Cx) {
     divider::live_design(cx);
     #[cfg(feature = "Dropdown")]
     dropdown::live_design(cx);
+    #[cfg(feature = "Drawer")]
+    drawer::live_design(cx);
     #[cfg(feature = "Input")]
     input::live_design(cx);
     #[cfg(feature = "Label")]

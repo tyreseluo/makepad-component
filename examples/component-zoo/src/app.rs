@@ -5,6 +5,7 @@ use makepad_components::button::MpButtonWidgetRefExt;
 use makepad_components::card::MpCardAction;
 use makepad_components::checkbox::MpCheckboxWidgetRefExt;
 use makepad_components::color_picker::MpColorPickerWidgetRefExt;
+use makepad_components::drawer::MpDrawerWidgetWidgetRefExt;
 use makepad_components::modal::MpModalAction;
 use makepad_components::modal::MpModalWidgetWidgetRefExt;
 use makepad_components::notification::MpNotificationWidgetWidgetRefExt;
@@ -32,6 +33,7 @@ live_design! {
     use makepad_components::color_picker::*;
     use makepad_components::divider::*;
     use makepad_components::dropdown::*;
+    use makepad_components::drawer::*;
     use makepad_components::input::*;
     use makepad_components::label::*;
     use makepad_components::layout::*;
@@ -3074,11 +3076,11 @@ live_design! {
                                 }
 
                                 // Alert Dialog preview
-                                <MpAlertDialog> {
-                                    width: 320,
-                                    header = {
-                                        title = { text: "Are you sure?" }
-                                    }
+                                    <MpAlertDialog> {
+                                        width: 320,
+                                        header = {
+                                            title = { text: "Are you sure?" }
+                                        }
                                     body = {
                                         <Label> {
                                             draw_text: {
@@ -3091,6 +3093,37 @@ live_design! {
                                     footer = {
                                         <MpButtonGhost> { text: "Cancel" }
                                         <MpButtonDanger> { text: "Delete" }
+                                    }
+                                }
+                            }
+
+                            <MpDivider> {}
+
+                            // ===== Drawer Section =====
+                            <View> {
+                                width: Fill, height: Fit,
+                                flow: Down,
+                                spacing: 16,
+
+                                <SectionHeader> { text: "Drawer" }
+
+                                <View> {
+                                    width: Fill, height: Fit,
+                                    flow: Right,
+                                    spacing: 12,
+                                    align: { y: 0.5 }
+
+                                    open_drawer_right = <MpButtonPrimary> { text: "Open Right" }
+                                    open_drawer_left = <MpButtonSecondary> { text: "Left" }
+                                    open_drawer_top = <MpButtonSecondary> { text: "Top" }
+                                    open_drawer_bottom = <MpButtonSecondary> { text: "Bottom" }
+
+                                    drawer_status = <Label> {
+                                        draw_text: {
+                                            text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                            color: (MUTED_FOREGROUND)
+                                        }
+                                        text: "Click a button to open a drawer"
                                     }
                                 }
                             }
@@ -3488,6 +3521,217 @@ live_design! {
                     }
                 } // close demo_modal
 
+                    demo_drawer_right = <MpDrawerWidget> {
+                        container = <MpDrawerContainerRight> {
+                            drawer = <MpDrawerRight> {
+                                header = {
+                                    title = { text: "Quick Settings" }
+                                }
+                                body = {
+                                    <Label> {
+                                        width: Fill,
+                                        height: Fit,
+                                        draw_text: {
+                                            text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                            color: (MUTED_FOREGROUND)
+                                            wrap: Word
+                                        }
+                                        text: "Adjust common preferences and update your profile information."
+                                    }
+
+                                    <MpDivider> { margin: { top: 8, bottom: 8 } }
+
+                                    <SubsectionLabel> { text: "Profile" }
+                                    <MpInput> { empty_text: "Full name" }
+                                    <MpInput> { empty_text: "Email address" }
+
+                                    <MpDivider> { margin: { top: 8, bottom: 8 } }
+
+                                    <SubsectionLabel> { text: "Preferences" }
+
+                                    <View> {
+                                        width: Fill, height: Fit,
+                                        flow: Right,
+                                        spacing: 12,
+                                        align: { y: 0.5 }
+
+                                        <Label> {
+                                            width: Fill, height: Fit,
+                                            draw_text: {
+                                                text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                                color: (FOREGROUND)
+                                            }
+                                            text: "Enable notifications"
+                                        }
+
+                                        <MpSwitch> { on: true }
+                                    }
+
+                                    <View> {
+                                        width: Fill, height: Fit,
+                                        flow: Right,
+                                        spacing: 12,
+                                        align: { y: 0.5 }
+
+                                        <Label> {
+                                            width: Fill, height: Fit,
+                                            draw_text: {
+                                                text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                                color: (FOREGROUND)
+                                            }
+                                            text: "Auto-save drafts"
+                                        }
+
+                                        <MpSwitch> { on: false }
+                                    }
+
+                                    <View> { width: Fill, height: 12 }
+                                }
+                                footer = {
+                                    <MpButtonGhost> { text: "Reset" }
+                                    <MpButtonPrimary> { text: "Save Changes" }
+                                }
+                            }
+                        }
+                    }
+
+                    demo_drawer_left = <MpDrawerWidgetLeft> {
+                        container = <MpDrawerContainerLeft> {
+                            drawer = <MpDrawerLeft> {
+                                header = {
+                                    title = { text: "Navigation" }
+                                }
+                                body = {
+                                    <View> {
+                                        width: Fill, height: Fit,
+                                        flow: Down,
+                                        spacing: 8
+
+                                        <MpButtonGhost> { text: "Dashboard" }
+                                        <MpButtonGhost> { text: "Projects" }
+                                        <MpButtonGhost> { text: "Team" }
+                                        <MpButtonGhost> { text: "Billing" }
+                                        <MpButtonGhost> { text: "Settings" }
+                                    }
+
+                                    <MpDivider> { margin: { top: 12, bottom: 12 } }
+
+                                    <SubsectionLabel> { text: "Shortcuts" }
+
+                                    <View> {
+                                        width: Fill, height: Fit,
+                                        flow: Down,
+                                        spacing: 8
+
+                                        <MpButtonSecondary> { text: "New Project" }
+                                        <MpButtonSecondary> { text: "Invite Member" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    demo_drawer_top = <MpDrawerWidgetTop> {
+                        max_height: 200,
+                        container = <MpDrawerContainerTop> {
+                            drawer = <MpDrawerTop> {
+                                header = {
+                                    title = { text: "Release Notes" }
+                                }
+                                body = {
+                                    <Label> {
+                                        width: Fill,
+                                        height: Fit,
+                                        draw_text: {
+                                            text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                            color: (MUTED_FOREGROUND)
+                                            wrap: Word
+                                        }
+                                        text: "Version 2.3 introduces performance improvements, a refreshed settings panel, and better keyboard navigation."
+                                    }
+
+                                    <MpDivider> { margin: { top: 8, bottom: 8 } }
+
+                                    <View> {
+                                        width: Fill, height: Fit,
+                                        flow: Down,
+                                        spacing: 8
+
+                                        <Label> {
+                                            width: Fill,
+                                            height: Fit,
+                                            draw_text: {
+                                                text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                                color: (FOREGROUND)
+                                                wrap: Word
+                                            }
+                                            text: "• Faster startup and reduced memory usage."
+                                        }
+                                        <Label> {
+                                            width: Fill,
+                                            height: Fit,
+                                            draw_text: {
+                                                text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                                color: (FOREGROUND)
+                                                wrap: Word
+                                            }
+                                            text: "• New shortcuts in the command palette."
+                                        }
+                                        <Label> {
+                                            width: Fill,
+                                            height: Fit,
+                                            draw_text: {
+                                                text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                                color: (FOREGROUND)
+                                                wrap: Word
+                                            }
+                                            text: "• Updated typography and spacing tokens."
+                                        }
+                                    }
+                                }
+                                footer = {
+                                    drawer_later_btn = <MpButtonGhost> { text: "Later" }
+                                    <MpButtonPrimary> { text: "Read More" }
+                                }
+                            }
+                        }
+                    }
+
+                    demo_drawer_bottom = <MpDrawerWidgetBottom> {
+                        max_height: 200,
+                        container = <MpDrawerContainerBottom> {
+                            drawer = <MpDrawerBottom> {
+                                header = {
+                                    title = { text: "Action Sheet" }
+                                }
+                                body = {
+                                    <Label> {
+                                        width: Fill,
+                                        height: Fit,
+                                        draw_text: {
+                                            text_style: <THEME_FONT_REGULAR>{ font_size: 14.0 }
+                                            color: (MUTED_FOREGROUND)
+                                            wrap: Word
+                                        }
+                                        text: "Choose what you'd like to do with this document."
+                                    }
+
+                                    <MpDivider> { margin: { top: 8, bottom: 8 } }
+
+                                    <View> {
+                                        width: Fill, height: Fit,
+                                        flow: Down,
+                                        spacing: 8
+
+                                        <MpButtonPrimary> { text: "Save and Continue" }
+                                        <MpButtonSecondary> { text: "Save Draft" }
+                                        <MpButtonDanger> { text: "Discard Changes" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     // Notification overlay - positioned at top-right
                     <View> {
                         width: Fill,
@@ -3755,6 +3999,45 @@ impl MatchEvent for App {
         if self.ui.mp_button(ids!(modal_confirm_btn)).clicked(&actions) {
             self.ui.mp_modal_widget(ids!(demo_modal)).close(cx);
             self.ui.label(ids!(modal_status)).set_text(cx, "Confirmed!");
+        }
+
+        if self.ui.mp_button(ids!(open_drawer_right)).clicked(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_right)).open(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Right drawer opened");
+        }
+        if self.ui.mp_button(ids!(open_drawer_left)).clicked(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_left)).open(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Left drawer opened");
+        }
+        if self.ui.mp_button(ids!(open_drawer_top)).clicked(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_top)).open(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Top drawer opened");
+        }
+        if self.ui.mp_button(ids!(open_drawer_bottom)).clicked(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_bottom)).open(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Bottom drawer opened");
+        }
+
+        if self.ui.mp_drawer_widget(ids!(demo_drawer_right)).close_requested(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_right)).close(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Right drawer closed");
+        }
+        if self.ui.mp_drawer_widget(ids!(demo_drawer_left)).close_requested(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_left)).close(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Left drawer closed");
+        }
+        if self.ui.mp_drawer_widget(ids!(demo_drawer_top)).close_requested(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_top)).close(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Top drawer closed");
+        }
+        if self.ui.mp_drawer_widget(ids!(demo_drawer_bottom)).close_requested(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_bottom)).close(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Bottom drawer closed");
+        }
+
+        if self.ui.mp_button(ids!(drawer_later_btn)).clicked(&actions) {
+            self.ui.mp_drawer_widget(ids!(demo_drawer_top)).close(cx);
+            self.ui.label(ids!(drawer_status)).set_text(cx, "Top drawer closed");
         }
 
         // Handle popover toggle button
