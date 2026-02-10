@@ -37,6 +37,7 @@ live_design! {
     use makepad_components::divider::*;
     use makepad_components::dropdown::*;
     use makepad_components::drawer::*;
+    use makepad_components::flexible_data_table::*;
     use makepad_components::input::*;
     use makepad_components::label::*;
     use makepad_components::layout::*;
@@ -143,7 +144,6 @@ live_design! {
                             theme_label = <SubsectionLabel> { text: "Light" }
                         }
                     }
-
                     // Category Tab Bar
                     <View> {
                         width: Fill, height: Fit,
@@ -3481,7 +3481,7 @@ live_design! {
                             width: Fill, height: Fill,
                             flow: Down,
                             spacing: 24,
-                            padding: { left: 24, right: 24, top: 24, bottom: 100 }
+                            padding: { left: 24, right: 24, top: 24, bottom: 400 }
 
                             show_bg: true
                             draw_bg: { color: (MUTED) }
@@ -3883,6 +3883,22 @@ live_design! {
                                         }
                                         text: "Clicked: 0 times"
                                     }
+                                }
+                            }
+
+                            <MpDivider> {}
+
+                            // ===== FlexibleDataTable Section =====
+                            <View> {
+                                width: Fill, height: Fit,
+                                flow: Down,
+                                spacing: 16,
+
+                                <SectionHeader> { text: "FlexibleDataTable" }
+
+                                <FlexibleDataTable> {
+                                    width: Fill,
+                                    height: Fit,
                                 }
                             }
                         }
